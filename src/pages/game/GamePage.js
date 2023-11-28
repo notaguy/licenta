@@ -1,15 +1,30 @@
-import './gamePage.css'
+import './gamePage.css';
+
+import {useState, useEffect} from "react"
+import { SPRITE_SOURCE } from '../../utils/constante'
+import RenderLevel from '../../components/render/RenderLevel';
 
 export default function Game(){
 
+    const [spriteImage, setSpriteImage] = useState(null);
+    useEffect(() =>{
+      const image = new Image();
+      image.src = SPRITE_SOURCE;
+      image.onload = () => {
+        setSpriteImage(image);
+      };
+    },[]);
+  
+    if(!spriteImage)
+    {
+      return null;
+    }
+  
+    console.log(spriteImage);
+
     return<>
     <div className="game">
-        <div className="gameBody">
-            <div className="game-container">
-                <canvas className="gameWindow" ></canvas>
-            </div>
-            
-        </div>
+        <RenderLevel spriteImage={spriteImage}/>
        
         <div className="info">
 

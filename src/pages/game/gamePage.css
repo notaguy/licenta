@@ -10,18 +10,23 @@
     padding:0;
     margin:0;
     overflow:hidden;
-    box-sizing: border-box;
+    box-sizing: border-box; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
  
 }
 
+/*width si height sunt de 180px, urmeaza sa fac scalare*/
+/*e partea albastra, fereastra jocului*/
 .game-container{
-    position: relative;
-    width: 1000px;
-    height: 800px;
+    width: var(--game-viewport-width);
+    height: var(--game-viewport-height);
+    /*pixel-size e dat sa fie 2 */
+    transform: scale(var(--pixel-size));
     background-color: #0F7288;
     outline: 1px solid #ffffff;
-    margin: 0 auto;
-    margin-top: 25px;
+ 
 }
 
 /*-------------------------------------------------------------------*/
