@@ -24,8 +24,7 @@
     height: var(--game-viewport-height);
     /*pixel-size e dat sa fie 2 */
     transform: scale(var(--pixel-size));
-    background-color: #0F7288;
-    outline: 1px solid #ffffff;
+    /* outline: 1px solid #ffffff; */
  
 }
 

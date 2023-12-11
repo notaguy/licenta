@@ -1,12 +1,18 @@
 import "../../pages/game/gamePage.css"
-import { CELL_SIZE } from "../../utils/constante"
-import SpriteSheet from '../SpriteSheet'
+import { CELL_SIZE, LEVEL_THEMES, THEME_BACKGROUNDS } from "../../utils/constante"
+import SpriteSheet from '../SpriteSheet' 
+import BackgroundTiles from "./BackroundTiles"
 
 export default function RenderLevel({spriteImage}){
 
     const level={
+        theme: LEVEL_THEMES.BLUE,
+     
+        walkableWidth: 16,
+        walkableHeight: 16,
+
         placements: [
-            {id:0, x: 0, y:0, spriteCoord: "1x0"},
+            {id:0, x: 2, y:0, spriteCoord: "1x0"},
             {id:1, x: 1, y:1, spriteCoord: "1x0"},
             {id:2, x: 2, y:2, spriteCoord: "1x0"},
             {id:3, x: 3, y:3, spriteCoord: "1x0"},
@@ -17,8 +23,9 @@ export default function RenderLevel({spriteImage}){
     }
 
     return (
-        <div className="gameBody">
+        <div className="gameBody" style={{background: THEME_BACKGROUNDS[level.theme]}}>
             <div className="game-container">
+                <BackgroundTiles level={level} image={spriteImage}/>
                 {level.placements.map(place => {
 
                     const x = place.x * CELL_SIZE + "px";
@@ -36,7 +43,7 @@ export default function RenderLevel({spriteImage}){
                     )
                 })}
                
-                <canvas className="gameWindow" ></canvas>
+                {/* <canvas className="gameWindow" ></canvas> */}
             </div>
             
         </div>

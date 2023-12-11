@@ -17,6 +17,9 @@ code {
   --pixel-size: 2;
 }
 
+
+
+
 /*ca sa nu fie pixelat*/
 canvas{
   image-rendering: -moz-crisp-edges;
