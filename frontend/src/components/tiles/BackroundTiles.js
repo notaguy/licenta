@@ -1,7 +1,7 @@
 import { THEME_TILES_MAP } from '../../utils/constante';
 import MapTiles from './MapTiles'
 
-export default function BackgroundTiles({level, image}){
+export default function BackgroundTiles({level}){
     const wallsWidth = level.walkableWidth + 1;
     const wallsHeight = level.walkableHeight + 1;
     const tileSet = THEME_TILES_MAP[level.theme];
@@ -38,7 +38,7 @@ export default function BackgroundTiles({level, image}){
                 }
               }
             map.push(
-                <MapTiles key={`${x}_${y}`} x={x} y={y} spriteCoord={getBackground(x,y)} image={image}/>
+                <MapTiles key={`${x}_${y}`} x={x} y={y} spriteCoord={getBackground(x,y)}/>
             )
         }
     }

@@ -1,0 +1,60 @@
+.game{
+    display: flex;
+}
+
+/*kind of the body of the game part*/
+.gameBody{
+    width: 66%;
+    height: 95vh;
+    background-color:#bce5ee;
+    padding:0;
+    margin:0;
+    overflow:hidden;
+    box-sizing: border-box; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+}
+
+/*width si height sunt de 180px, urmeaza sa fac scalare*/
+/*e partea albastra, fereastra jocului*/
+.game-container{
+    width: var(--game-viewport-width);
+    height: var(--game-viewport-height);
+    /*pixel-size e dat sa fie 2 */
+    transform: scale(var(--pixel-size));
+    /* outline: 1px solid #ffffff; */
+ 
+}
+
+/*-------------------------------------------------------------------*/
+.info{
+    width:1vw;
+}
+/*---------------------------------------------------------------*/
+.compiler{
+    width: 33%;
+    background-color: #0F7288;
+}
+
+.butoane{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.editor textarea{
+    background-color: #CACACA;
+    height: 85vh;
+    width: 95%;
+    margin: 5px;
+    overflow: hidden;
+}
+
+.butoane button{
+    padding: 5px;
+    font-size: 20px;
+    margin: 3px;
+    align-items: centers;
+    justify-content: space-evenly;
+}
